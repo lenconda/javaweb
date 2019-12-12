@@ -21,6 +21,6 @@ public class CategoryController extends HttpServlet {
         CategoryService categoryService = new CategoryService();
         List<Category> list = categoryService.findAll();
         request.setAttribute("categories", list);
-        request.getRequestDispatcher("/index.jsp").forward(request, response);
+        request.getRequestDispatcher("/main.jsp").forward(request, response);
     }
 }

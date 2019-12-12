@@ -1,5 +1,6 @@
 package dao.impl;
 
+import dao.CategoryDao;
 import dao.JDBCUtil;
 import vo.Category;
 
@@ -10,7 +11,18 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CategoryDaoImpl {
+public class CategoryDaoImpl implements CategoryDao {
+    @Override
+    public void add(Category category) {
+
+    }
+
+    @Override
+    public void delete(Category category) {
+
+    }
+
+    @Override
     public List<Category> findAll() {
         Connection connection = null;
         Statement stat = null;

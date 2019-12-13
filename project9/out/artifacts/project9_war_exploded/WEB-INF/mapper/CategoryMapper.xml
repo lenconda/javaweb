@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.lenconda.project9.dao.CategoryDao">
+  <resultMap id="result_map" type="top.lenconda.project9.entity.Category">
+    <id column="id" property="id" />
+    <result column="name" property="name" />
+    <result column="description" property="description" />
+  </resultMap>
+
+  <select id="findAll" resultMap="result_map">
+    SELECT id,name,description FROM category
+  </select>
+</mapper>

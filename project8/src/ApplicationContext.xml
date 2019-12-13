@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+  <context:component-scan base-package="top.lenconda"></context:component-scan>
+  <bean id="bookService" class="top.lenconda.services.BookService" scope="prototype">
+    <constructor-arg index="0" value="Hello world"></constructor-arg>
+<!--    <property name="bookDao" ref="bookDao"></property>-->
+  </bean>
+  <bean id="userService" class="top.lenconda.bean.BeanFactory" factory-method="getUserService"></bean>
+  <bean id="categoryService" class="top.lenconda.bean.BeanFactory" factory-method="getCategoryService"></bean>
+  <bean id="book" class="top.lenconda.vo.Book">
+    <property name="bookName" value="Java Web 程序设计"></property>
+  </bean>
+  <bean id="bookDao" class="top.lenconda.dao.BookDao"></bean>
+</beans>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.lenconda.project9.dao.BookDao">
+  <resultMap id="result_map" type="top.lenconda.project9.entity.Book">
+    <id column="id" property="id" />
+    <result column="name" property="name" />
+    <result column="author" property="author" />
+    <result column="price" property="price" />
+    <result column="image" property="image" />
+    <result column="description" property="description" />
+    <result column="category_id" property="category_id" />
+  </resultMap>
+
+  <select id="findBookByCategoryId" resultMap="result_map">
+    SELECT id,name,author,price,image,description,category_id
+    FROM book
+    WHERE category_id = #{id, jdbcType=VARCHAR}
+  </select>
+</mapper>
